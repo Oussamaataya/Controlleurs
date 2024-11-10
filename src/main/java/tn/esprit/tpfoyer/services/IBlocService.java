@@ -11,4 +11,6 @@ public interface IBlocService {
     Bloc updateBloc(Bloc b);
     Bloc retrieBloc(Long idBloc);
     void removeBloc(Long idBloc);
+
+    List<Bloc> findByFoyerUniversiteNomUniversite(String nomUniversite);
 }

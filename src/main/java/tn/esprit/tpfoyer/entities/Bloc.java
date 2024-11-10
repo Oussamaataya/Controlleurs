@@ -13,20 +13,20 @@ public class Bloc implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idBloc ;
     private String nomBloc;
-    private int CapaciteBloc;
+    private long capaciteBloc;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc")
     private Set<Chambre> chambres;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="blocc")
-    private Set<Foyer> foyers;
+    @ManyToOne
+    Foyer foyer;
 
 
 
     public Bloc(long idBloc, String nomBloc, int capaciteBloc) {
         this.idBloc = idBloc;
         this.nomBloc = nomBloc;
-        CapaciteBloc = capaciteBloc;
+        this.capaciteBloc = capaciteBloc;
     }
 
     public Bloc() {
@@ -49,12 +49,12 @@ public class Bloc implements Serializable {
         this.nomBloc = nomBloc;
     }
 
-    public int getCapaciteBloc() {
-        return CapaciteBloc;
+    public long getCapaciteBloc() {
+        return capaciteBloc;
     }
 
     public void setCapaciteBloc(int capaciteBloc) {
-        CapaciteBloc = capaciteBloc;
+        capaciteBloc = capaciteBloc;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Bloc implements Serializable {
         return "Bloc{" +
                 "idBloc=" + idBloc +
                 ", nomBloc='" + nomBloc + '\'' +
-                ", CapaciteBloc=" + CapaciteBloc +
+                ", CapaciteBloc=" + capaciteBloc +
                 '}';
     }
 }
