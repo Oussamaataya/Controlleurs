@@ -7,4 +7,5 @@ import tn.esprit.tpfoyer.entities.Tache;
 
 @Repository
 public interface TacheRepository extends JpaRepository<Tache, Long> {
+
 }

@@ -57,6 +57,14 @@ public class Bloc implements Serializable {
         capaciteBloc = capaciteBloc;
     }
 
+    public Set<Chambre> getChambres() {
+        return chambres;
+    }
+
+    public void setChambres(Set<Chambre> chambres) {
+        this.chambres = chambres;
+    }
+
     @Override
     public String toString() {
         return "Bloc{" +

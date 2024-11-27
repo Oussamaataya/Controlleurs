@@ -35,6 +35,14 @@ public class Tache {
 
     }
 
+    public Etudiant getEtudiant() {
+        return etudiant;
+    }
+
+    public void setEtudiant(Etudiant etudiant) {
+        this.etudiant = etudiant;
+    }
+
     public Long getIdTache() {
         return idTache;
     }

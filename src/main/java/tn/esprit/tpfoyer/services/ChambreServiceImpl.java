@@ -57,4 +57,6 @@ public class ChambreServiceImpl implements  IChambreService {
     public List<Chambre> findByBlocNomBlocAndBlocCapaciteBlocGreaterThan(String nomBloc, long capaciteBloc) {
         return chambreRepository.findByBlocNomBlocAndBlocCapaciteBlocGreaterThan(nomBloc, capaciteBloc);
     }
+
+
 }

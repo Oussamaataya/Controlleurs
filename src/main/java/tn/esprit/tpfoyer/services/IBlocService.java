@@ -13,4 +13,6 @@ public interface IBlocService {
     void removeBloc(Long idBloc);
 
     List<Bloc> findByFoyerUniversiteNomUniversite(String nomUniversite);
+
+    Bloc affecterChambresABloc(List<Long> numChambre, String nomBloc);
 }

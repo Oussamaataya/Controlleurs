@@ -2,7 +2,6 @@ package tn.esprit.tpfoyer.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import tn.esprit.tpfoyer.entities.Chambre;
@@ -11,6 +10,9 @@ import java.util.List;
 
 @Repository
 public interface ChambreRepository extends JpaRepository<Chambre, Long> {
+
+
+    List<Chambre> findByBlocNomBloc ( String NomBloc);
 
     List<Chambre> findByTypeChambreAndBlocNomBloc (TypeChambre typeChambre, String NomBloc);
     List<Chambre> findByReservationsEstValide (boolean estValide);
@@ -21,5 +23,6 @@ public interface ChambreRepository extends JpaRepository<Chambre, Long> {
     List<Chambre> findByValidite (@Param("estValide") boolean estValide  );
     @Query("select c from Chambre c where c.bloc.nomBloc=:nomBloc and c.bloc.capaciteBloc>:capaciteBloc ")
     List<Chambre> findByTypeCBloc (@Param("nomBloc") String nomBloc , @Param("capaciteBloc") long capaciteBloc );
-    
+    @Query("SELECT c FROM Chambre c WHERE c.numChambre IN :numChambres")
+    List<Chambre> findByNumChambreIn(@Param("numChambres") List<Long> numChambres);
 }

@@ -11,4 +11,6 @@ public interface ITacheService {
     Tache updateTache(Tache t);
     Tache retrieTache(Long idTache);
     void removeTache(Long idTache);
+
+    List<Tache> addTasksAndAffectToEtudiant(List<Tache> tasks, String nomEt, String prenomEt);
 }
